@@ -1,39 +1,83 @@
 :root {
 
+    /* =========================
+       PRIMARY
+    ========================= */
+
     --white: #ffffff;
+
     --off-white: #f7f9fc;
 
     --black: #111111;
-    --dark: #252525;
-    --gray: #4d4d4d;
 
-    --blue: #164f91;
+    --dark: #252525;
+
+    --gray: #4a4a4a;
+
+
+    /* =========================
+       BLUE — PRIMARY ACCENT
+    ========================= */
+
+    --blue: #174f91;
+
     --blue-dark: #103b6c;
+
     --blue-light: #eef5fc;
 
-    --red: #b3212b;
-    --red-dark: #861922;
-    --red-light: #fff1f2;
 
-    --gold: #b58a24;
-    --gold-light: #fff9e8;
+    /* =========================
+       RED — SECONDARY ACCENT
+    ========================= */
 
-    --border: #d4d9df;
+    --red: #a91f2a;
+
+    --red-dark: #7f1720;
+
+    --red-light: #fff2f3;
+
+
+    /* =========================
+       GOLD — WARM ACCENT
+    ========================= */
+
+    --gold: #b28725;
+
+    --gold-light: #fff9e9;
+
+
+    /* =========================
+       PURPLE — VERY LIMITED
+    ========================= */
+
+    --purple: #70558f;
+
+    --purple-light: #faf7fc;
+
+
+    /* =========================
+       OTHER
+    ========================= */
+
+    --border: #d2d7dd;
+
 
     --serif:
         Georgia,
         "Times New Roman",
         serif;
 
+
     --sans:
         Arial,
         Helvetica,
         sans-serif;
+
 }
 
 
 /* =========================
-   BASIC
+   RESET
 ========================= */
 
 * {
@@ -59,6 +103,12 @@ body {
     font-size: 20px;
 
     line-height: 1.75;
+
+}
+
+
+img {
+    max-width: 100%;
 }
 
 
@@ -72,6 +122,7 @@ a {
     outline: 4px solid var(--gold);
 
     outline-offset: 5px;
+
 }
 
 
@@ -100,7 +151,7 @@ a {
 
     margin: auto;
 
-    padding: 20px 30px;
+    padding: 18px 30px;
 
     display: flex;
 
@@ -108,7 +159,7 @@ a {
 
     justify-content: space-between;
 
-    gap: 40px;
+    gap: 35px;
 
 }
 
@@ -126,25 +177,15 @@ a {
 }
 
 
-.brand-symbol {
+.brand-logo {
 
-    width: 62px;
+    width: 78px;
 
-    height: 62px;
+    height: 78px;
 
-    display: grid;
+    object-fit: contain;
 
-    place-items: center;
-
-    border-radius: 50%;
-
-    background: var(--blue);
-
-    color: white;
-
-    border: 4px solid var(--gold);
-
-    font-weight: bold;
+    flex-shrink: 0;
 
 }
 
@@ -157,7 +198,9 @@ a {
 
     font-family: var(--serif);
 
-    font-size: 27px;
+    font-size: 28px;
+
+    line-height: 1.2;
 
 }
 
@@ -172,6 +215,23 @@ a {
 
     font-weight: bold;
 
+    line-height: 1.4;
+
+}
+
+
+.brand-text small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
 }
 
 
@@ -179,7 +239,9 @@ a {
 
     display: flex;
 
-    gap: 28px;
+    align-items: center;
+
+    gap: 27px;
 
 }
 
@@ -216,7 +278,7 @@ a {
 
     place-items: center;
 
-    padding: 100px 25px;
+    padding: 105px 25px;
 
     text-align: center;
 
@@ -224,8 +286,8 @@ a {
 
         linear-gradient(
             180deg,
-            #ffffff,
-            #f7faff
+            #ffffff 0%,
+            #f8fbff 100%
         );
 
 }
@@ -235,7 +297,7 @@ a {
 
     max-width: 900px;
 
-    animation: fadeIn .8s ease both;
+    animation: gentleAppear .7s ease both;
 
 }
 
@@ -248,7 +310,7 @@ a {
 
     text-transform: uppercase;
 
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
 
     font-size: 15px;
 
@@ -259,7 +321,9 @@ a {
 
 h1 {
 
-    margin: 10px 0 30px;
+    margin: 10px 0 28px;
+
+    color: var(--black);
 
     font-family: var(--serif);
 
@@ -281,13 +345,30 @@ h1 span {
 
 .hero-text {
 
-    max-width: 760px;
+    max-width: 780px;
 
     margin: auto;
 
+    color: var(--black);
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    line-height: 1.55;
+
+}
+
+
+.hero-subtext {
+
+    max-width: 720px;
+
+    margin: 20px auto 0;
+
     color: var(--dark);
 
-    font-size: 23px;
+    font-size: 21px;
 
 }
 
@@ -315,7 +396,9 @@ h1 span {
 
     display: inline-block;
 
-    padding: 17px 28px;
+    min-height: 58px;
+
+    padding: 15px 27px;
 
     border-radius: 8px;
 
@@ -325,7 +408,9 @@ h1 span {
 
     text-decoration: none;
 
-    transition: .2s ease;
+    transition:
+        background-color .2s ease,
+        transform .2s ease;
 
 }
 
@@ -383,7 +468,7 @@ h1 span {
 
 .section-heading {
 
-    max-width: 800px;
+    max-width: 820px;
 
 }
 
@@ -403,6 +488,8 @@ h2 {
 
     margin: 10px 0 25px;
 
+    color: var(--black);
+
     font-family: var(--serif);
 
     font-size: clamp(38px, 5vw, 54px);
@@ -414,9 +501,15 @@ h2 {
 
 h3 {
 
+    margin: 20px 0 12px;
+
+    color: var(--black);
+
     font-family: var(--serif);
 
     font-size: 30px;
+
+    line-height: 1.25;
 
 }
 
@@ -430,9 +523,9 @@ p {
 
 .section-lead {
 
-    font-size: 22px;
-
     color: var(--dark);
+
+    font-size: 22px;
 
 }
 
@@ -522,9 +615,13 @@ p {
 
     color: var(--red);
 
-    font-size: 24px;
+    font-size: 25px;
 
     font-weight: bold;
+
+    text-decoration: underline;
+
+    text-decoration-thickness: 2px;
 
 }
 
@@ -563,7 +660,8 @@ p {
 
     padding: 35px;
 
-    box-shadow: 0 12px 35px rgba(0,0,0,.07);
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.07);
 
 }
 
@@ -576,7 +674,7 @@ p {
 
     align-items: flex-start;
 
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 
 }
 
@@ -590,7 +688,7 @@ p {
 
 .location-icon {
 
-    font-size: 28px;
+    font-size: 27px;
 
 }
 
@@ -639,7 +737,8 @@ p {
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 25px;
 
@@ -677,9 +776,9 @@ p {
 
 .support-number {
 
-    width: 50px;
+    width: 52px;
 
-    height: 50px;
+    height: 52px;
 
     display: grid;
 
@@ -690,6 +789,8 @@ p {
     background: var(--gold-light);
 
     border: 2px solid var(--gold);
+
+    color: var(--black);
 
     font-weight: bold;
 
@@ -707,11 +808,16 @@ p {
    FAMILY
 ========================= */
 
+/*
+   PURPLE IS INTENTIONALLY
+   USED VERY SPARINGLY.
+*/
+
 .family-section {
 
     padding: 100px 25px;
 
-    background: var(--red-light);
+    background: var(--purple-light);
 
 }
 
@@ -732,6 +838,17 @@ p {
     margin-left: auto;
 
     margin-right: auto;
+
+}
+
+
+.purple-mark {
+
+    color: var(--purple);
+
+    font-size: 34px;
+
+    margin-bottom: 8px;
 
 }
 
@@ -779,6 +896,8 @@ p {
 
     font-size: 21px;
 
+    line-height: 1.8;
+
 }
 
 
@@ -786,7 +905,7 @@ p {
 
     max-width: none;
 
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 
 }
 
@@ -813,7 +932,8 @@ p {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     gap: 50px;
 
@@ -830,7 +950,7 @@ p {
 
 .phone-box {
 
-    padding: 35px;
+    padding: 38px;
 
     background: var(--blue-light);
 
@@ -843,15 +963,17 @@ p {
 
     display: block;
 
-    margin: 10px 0 25px;
+    margin: 10px 0 27px;
 
     color: var(--blue);
 
-    font-size: 34px;
+    font-size: 35px;
 
     font-weight: bold;
 
-    text-decoration: none;
+    text-decoration: underline;
+
+    text-decoration-thickness: 2px;
 
 }
 
@@ -906,21 +1028,13 @@ footer {
 
 .footer-logo {
 
-    width: 55px;
+    width: 65px;
 
-    height: 55px;
+    height: 65px;
 
-    display: grid;
+    object-fit: contain;
 
-    place-items: center;
-
-    border: 3px solid var(--gold);
-
-    border-radius: 50%;
-
-    background: var(--blue);
-
-    font-weight: bold;
+    flex-shrink: 0;
 
 }
 
@@ -936,9 +1050,22 @@ footer {
 
 .footer-brand p {
 
-    margin: 0;
+    margin: 3px 0;
 
     color: white;
+
+}
+
+
+.parent-company {
+
+    display: block;
+
+    color: #f0d27a;
+
+    font-weight: bold;
+
+    font-size: 15px;
 
 }
 
@@ -974,7 +1101,7 @@ footer {
 
 .footer-company a:hover {
 
-    color: #ffd96a;
+    color: #f0d27a;
 
 }
 
@@ -1007,13 +1134,13 @@ footer {
    ANIMATION
 ========================= */
 
-@keyframes fadeIn {
+@keyframes gentleAppear {
 
     from {
 
         opacity: 0;
 
-        transform: translateY(15px);
+        transform: translateY(12px);
 
     }
 
@@ -1033,6 +1160,7 @@ footer {
 ========================= */
 
 @media (max-width: 850px) {
+
 
     .header-inner {
 
@@ -1095,7 +1223,12 @@ footer {
 }
 
 
+/* =========================
+   SMALL PHONES
+========================= */
+
 @media (max-width: 550px) {
+
 
     body {
 
@@ -1107,6 +1240,15 @@ footer {
     .header-inner {
 
         padding: 15px 20px;
+
+    }
+
+
+    .brand-logo {
+
+        width: 62px;
+
+        height: 62px;
 
     }
 
@@ -1125,7 +1267,16 @@ footer {
     }
 
 
+    .brand-text small {
+
+        font-size: 12px;
+
+    }
+
+
     .hero {
+
+        min-height: auto;
 
         padding: 75px 20px;
 
@@ -1134,7 +1285,14 @@ footer {
 
     .hero-text {
 
-        font-size: 20px;
+        font-size: 21px;
+
+    }
+
+
+    .hero-subtext {
+
+        font-size: 19px;
 
     }
 
@@ -1186,6 +1344,15 @@ footer {
     .scripture-text {
 
         font-size: 19px;
+
+    }
+
+
+    .footer-logo {
+
+        width: 55px;
+
+        height: 55px;
 
     }
 
